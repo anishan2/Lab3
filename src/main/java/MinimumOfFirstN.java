@@ -24,7 +24,18 @@ public class MinimumOfFirstN {
      * @return the minimum of the first N values in the array
      */
     public static double minimumOfFirstN(final double[] doubles, final int n) {
-        return false;
+        double smallest = doubles[0];
+        for (int i = 0; i < n; i++) {
+            if (doubles[i] < smallest) {
+                smallest = doubles[i];
+            }
+        }
+
+        if (smallest < 0) {
+            return 0.0;
+        } else {
+            return smallest;
+        }
     }
 
     /* ********************************************************************************************
