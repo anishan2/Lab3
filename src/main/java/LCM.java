@@ -10,7 +10,9 @@ import java.util.Scanner;
  * @see <a href="https://cs125.cs.illinois.edu/MP/0/">MP0 Documentation</a>
  */
 public final class LCM {
-
+    /**
+     This class will compile a function that computes the least common multiple of two numbers.
+     */
     public static final int LCM_INVALID = -1;
 
     /**
@@ -28,8 +30,11 @@ public final class LCM {
      * @see <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Least common multiple</a>
      */
     public static int lcm(final int first, final int second) {
-        return 0.0;
+        return 0;
     }
+
+
+
 
     /* ********************************************************************************************
      * You do not need to modify code below this comment.
