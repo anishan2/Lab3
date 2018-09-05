@@ -31,13 +31,33 @@ public final class LCM {
      */
     public static int lcm(final int first, final int second) {
         int lcm = 0;
-        if (first == 1 || second == 1) {
-            return first * second;
+        int larger;
+        int smaller;
+        int start;
+        if (Math.abs(first) > Math.abs(second)) {
+            larger = Math.abs(first);
+            smaller = Math.abs(second);
+        } else {
+            larger = Math.abs(second);
+            smaller = Math.abs(first);
         }
-        for (int i = 2; i < second; i++) {
-            if (first % i == 0) {
-                lcm = first * i;
-                break;
+        if (smaller == 1) {
+            start = 1;
+        } else {
+            start = 2;
+        }
+        if (larger == 0 || smaller == 0) {
+            lcm = -1;
+        } else if (larger % smaller == 0) {
+            lcm = larger;
+        } else {
+            for (int i = start; i < larger; i++) {
+                if (larger % i == 0) {
+                    lcm = larger * i;
+                    break;
+                } else {
+                    lcm = -1;
+                }
             }
         }
         return lcm;
