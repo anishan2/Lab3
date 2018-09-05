@@ -37,7 +37,7 @@ public final class Quizzer {
     public static int computeScore(final Boolean diversityAnswerCorrect,
             final Boolean illiacAnswerCorrect, final Boolean mosaicAnswerCorrect,
             final Boolean variableAnswerCorrect) {
-        return true;
+        return 0;
     }
 
     /* *******************************************************************************************

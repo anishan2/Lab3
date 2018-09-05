@@ -30,7 +30,16 @@ public final class LCM {
      * @see <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Least common multiple</a>
      */
     public static int lcm(final int first, final int second) {
-        int lcm = first * second;
+        int lcm = 0;
+        if (first == 1 || second == 1) {
+            return first * second;
+        }
+        for (int i = 2; i < second; i++) {
+            if (first % i == 0) {
+                lcm = first * i;
+                break;
+            }
+        }
         return lcm;
     }
 
