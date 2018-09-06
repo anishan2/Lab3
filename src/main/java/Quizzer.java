@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  */
 
 public final class Quizzer {
-
+    /** Used as a multiplier. */
     private static final int POINTS_PER_QUESTION = 5;
 
     /**
@@ -37,7 +37,20 @@ public final class Quizzer {
     public static int computeScore(final Boolean diversityAnswerCorrect,
             final Boolean illiacAnswerCorrect, final Boolean mosaicAnswerCorrect,
             final Boolean variableAnswerCorrect) {
-        return 0;
+            int pts = 0;
+            if (diversityAnswerCorrect) {
+                pts++;
+            }
+            if (illiacAnswerCorrect) {
+                pts++;
+            }
+            if (mosaicAnswerCorrect) {
+                pts++;
+            }
+            if (variableAnswerCorrect) {
+                pts++;
+            }
+            return pts * POINTS_PER_QUESTION;
     }
 
     /* *******************************************************************************************
