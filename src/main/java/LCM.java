@@ -33,9 +33,9 @@ public final class LCM {
         int lcm  = 0;
         int sec = Math.abs(second);
         int fir = Math.abs(first);
-        int smaller = 0;
-        int larger = 0;
-        if (sec < fir) {
+        int smaller;
+        int larger;
+        if (fir > sec) {
             smaller = sec;
             larger = fir;
         } else {
@@ -44,11 +44,14 @@ public final class LCM {
         }
         if (fir == 1 || sec == 1) {
             lcm = fir * sec;
-        }
-        for (int i = larger; i < (larger * smaller); i++) {
-            if (fir % i == 0 && sec % i == 0) {
-                lcm = i;
-                break;
+        } else if (fir == 0 || sec == 0) {
+            lcm = -1;
+        } else {
+            for (int i = larger; i <= (larger * smaller); i++) {
+                if (i % fir == 0 && i % sec == 0) {
+                    lcm = i;
+                    break;
+                }
             }
         }
         return lcm;
