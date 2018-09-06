@@ -30,34 +30,25 @@ public final class LCM {
      * @see <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Least common multiple</a>
      */
     public static int lcm(final int first, final int second) {
-        int lcm = 0;
-        int larger;
-        int smaller;
-        int start;
-        if (Math.abs(first) > Math.abs(second)) {
-            larger = Math.abs(first);
-            smaller = Math.abs(second);
+        int lcm  = 0;
+        int sec = Math.abs(second);
+        int fir = Math.abs(first);
+        int smaller = 0;
+        int larger = 0;
+        if (sec < fir) {
+            smaller = sec;
+            larger = fir;
         } else {
-            larger = Math.abs(second);
-            smaller = Math.abs(first);
+            smaller = fir;
+            larger = sec;
         }
-        if (smaller == 1) {
-            start = 1;
-        } else {
-            start = 2;
+        if (fir == 1 || sec == 1) {
+            lcm = fir * sec;
         }
-        if (larger == 0 || smaller == 0) {
-            lcm = -1;
-        } else if (larger % smaller == 0) {
-            lcm = larger;
-        } else {
-            for (int i = start; i < larger; i++) {
-                if (larger % i == 0) {
-                    lcm = larger * i;
-                    break;
-                } else {
-                    lcm = -1;
-                }
+        for (int i = larger; i < (larger * smaller); i++) {
+            if (fir % i == 0 && sec % i == 0) {
+                lcm = i;
+                break;
             }
         }
         return lcm;
