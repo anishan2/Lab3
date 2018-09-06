@@ -39,18 +39,17 @@ public final class LCM {
         } else {
             smaller = fir;
         }
-        if (fir == 1 || sec == 1) {
-            return fir * sec;
-        } else if (fir == 0 || sec == 0) {
+        if (fir == 0 || sec == 0) {
             return -1;
         } else {
-            for (int i = 2; i <= smaller; i++) {
+            for (int i = smaller; i >= 1; i--) {
                 if (fir % i == 0 && sec % i == 0) {
                     gcf = i;
                     break;
                 }
             }
-        } return (fir * sec) / gcf;
+        }
+        return (fir * sec) / gcf;
     }
 
 
